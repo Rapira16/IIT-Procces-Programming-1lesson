@@ -1,0 +1,32 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+void ex_1() {
+	double S, p, r, m;
+	int n;
+	bool f1 = 0;
+	cout << "Enter S, p, n in same order" << endl;
+	while (f1 != 1) {
+		if (!(cin >> S >> p >> n)) {
+			cout << "Invalid input. Repeat" << endl;
+			cout << "Enter S, p, n in same order" << endl;
+		} else {
+			f1 = 1;
+		}
+	}
+	if ((S <= 0) or (p <= 0) or (n <= 0)) {
+		cout << "Invalid input. No negative numbers or 0";
+	} else {
+		r = p / 100;
+		m = (S * r * pow((1 + r), n)) / (12 * (pow((1 + r), n) - 1));
+	}
+	cout << "m = " << m << endl;
+}
+
+
+int main() {
+	ex_1();
+	return 0;
+}

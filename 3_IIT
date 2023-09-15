@@ -25,8 +25,32 @@ void ex_1() {
 	cout << "m = " << m << endl;
 }
 
+void ex_2() {
+	double S, p, r, m, m0;
+	int n;
+	bool f1 = 0;
+	cout << "Enter S, m, n in same order" << endl;
+	while (f1 != 1) {
+		if (!(cin >> S >> m >> n)) {
+			cout << "Invalid input. Repeat" << endl;
+			cout << "Enter S, m, n in same order" << endl;
+		}
+		else {
+			f1 = 1;
+		}
+	}
+	for (p = 1; p <= 100; p += 0.01) {
+		r = p / 100;
+		m0 = round((S * r * pow((1 + r), n)) / (12 * (pow((1 + r), n) - 1)));
+		if (m0 == m) {
+			cout << "p = " << p << endl;
+			break;
+		}
+	}
+}
+
 
 int main() {
-	ex_1();
+	ex_2();
 	return 0;
 }
